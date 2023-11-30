@@ -143,11 +143,11 @@ def write_binary_tree(binary_tree: list, linewidth: int, currentline=0) -> None:
                                   currentline=currentline)
 
 
-def main_binary_tree_method(statement: str, print=True) -> list:
+def main_binary_tree_method(statement: str, isPrint=True) -> list:
     with open(standart_file, "w"):
         pass
     tree = binary_tree_from_arythmetic_statement(statement)
-    if print:
+    if isPrint:
         write_binary_tree(tree, 166)
         with open(standart_file, "r") as filey:
             while True:
