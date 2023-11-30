@@ -99,8 +99,6 @@ def brackets_enclosing(statement: list) -> list:
 
 def binary_tree_from_arythmetic_statement(statement):
     statement = standartise_statement(statement)
-    for i in range(len(statement)):
-        pass
     if "(" in statement:
         statement = brackets_simplifying(statement)
     brackets_enclosing(statement)

@@ -157,6 +157,7 @@ def main_binary_tree_method(statement: str, print=True) -> list:
                 buffer = buffer[:-1].rstrip(" ")
                 print(buffer)
     return tree
+    # [["6", "+", ["2", "^", ["9", "/", "3"]]], "/", ["11", "-", "4"]]
 
 
 if __name__ == "__main__":
