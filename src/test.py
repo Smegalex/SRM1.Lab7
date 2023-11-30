@@ -1,7 +1,7 @@
 with open("final_tree.txt", "r") as reading_file:
     tree = reading_file.readlines()
 print(tree)
-tree[2] = tree[2][:-1]
+tree[1] = tree[1][:-1]
 with open("final_tree.txt", "w") as writable_file:
     writable_file.writelines(tree)
 # print(lines)
