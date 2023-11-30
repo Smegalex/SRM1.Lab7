@@ -1,19 +1,6 @@
+from simplify_to_binary_tree import *
+
 standart_file = "final_tree.txt"
-
-
-def standartise_statement(statement):
-    return statement.replace(" ", "").replace("÷", "/").replace(":", "/").replace("×", "*").replace("·", "*").replace("−", "-")
-
-
-def binary_tree_from_arythmetic_statement(statement):
-    tree = []
-
-    statement = standartise_statement(statement)
-    if "^" in statement:
-        statement = list(statement.split("^", 1))
-        statement.insert(1, "^")
-        if statement[0][-1] == ")":
-            statement[0] = statement[-1][1:-1]
 
 
 def write_to_tree_file(writing, file=standart_file, currentline=None, insertmode=False) -> None:
@@ -156,16 +143,28 @@ def write_binary_tree(binary_tree: list, linewidth: int, currentline=0) -> None:
                                   currentline=currentline)
 
 
-if __name__ == "__main__":
-    # standart_file =
+def main_binary_tree_method(statement: str, print=True) -> list:
     with open(standart_file, "w"):
         pass
-    binary_tree_from_arythmetic_statement("15 ÷ (1 + 2))^(10−2×4)")
-    write_binary_tree(
-        [["6", "+", ["2", "^", ["9", "/", "3"]]], "/", ["11", "-", "4"]], 166)
+    tree = binary_tree_from_arythmetic_statement(statement)
+    if print:
+        write_binary_tree(tree, 166)
+        with open(standart_file, "r") as filey:
+            while True:
+                buffer = filey.readline()
+                if buffer == "":
+                    break
+                buffer = buffer[:-1].rstrip(" ")
+                print(buffer)
+    return tree
+
+
+if __name__ == "__main__":
+    main_binary_tree_method("(6 + 2^(9÷3)) ÷ (11 − 4)")
 
     # Варіант 24
     # (6 + 2^(9÷3)) ÷ (11 − 4)
+    # [["6", "+", ["2", "^", ["9", "/", "3"]]], "/", ["11", "-", "4"]]
 
     # Варіант 1
     # ((2+5)×4-7)÷3
