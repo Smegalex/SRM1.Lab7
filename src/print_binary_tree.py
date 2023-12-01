@@ -161,11 +161,9 @@ def main_binary_tree_method(statement: str, isPrint=True) -> list:
 
 
 if __name__ == "__main__":
-    main_binary_tree_method("(6 + 2^(9÷3)) ÷ (11 − 4)")
+    main_binary_tree_method("(15 ÷ (1 + 2))^(10−2×4)")
 
-    equation = "15 ÷ (1 + 2))^(10−2×4)"
-
-    
+    # equation = "15 ÷ (1 + 2))^(10−2×4)"
 
     # Варіант 24
     # (6 + 2^(9÷3)) ÷ (11 − 4)

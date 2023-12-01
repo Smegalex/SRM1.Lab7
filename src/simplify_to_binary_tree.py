@@ -93,6 +93,7 @@ def brackets_enclosing(statement: list) -> list:
 
                     operation_chroniches.pop(ind)
             statement = list(filter(None, statement))
+    statement = list(filter(None, statement))
     statement = doubling_arrays_remove(statement)
     return statement
 
@@ -101,7 +102,7 @@ def binary_tree_from_arythmetic_statement(statement):
     statement = standartise_statement(statement)
     if "(" in statement:
         statement = brackets_simplifying(statement)
-    brackets_enclosing(statement)
+    statement = brackets_enclosing(statement)
     return statement
 
 
